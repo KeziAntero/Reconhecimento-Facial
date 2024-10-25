@@ -1,0 +1,63 @@
+body {
+    background-color: #0D0B0A;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center;     /* Centraliza o conteúdo verticalmente */
+    position: relative;
+}
+
+/* Agrupa o vídeo e o texto */
+#video-container {
+    display: flex;
+    align-items: center; /* Alinha o texto verticalmente ao vídeo */
+}
+
+/* Estilo para o vídeo */
+#cam {
+    display: block;
+    margin: 0;
+    position: relative;
+    border-radius: 10px;
+}
+
+/* Canvas sobreposto ao vídeo */
+canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Div de informações próxima ao vídeo */
+#info {
+    margin-left: 50px;
+    padding: 10px;
+    font-family: Courier New, sans-serif;
+    color: antiquewhite;
+    font-size: 20px;
+    text-align: left;
+}
+
+#info p {
+    margin: 5px 0;
+}
+
+#info span {
+    color: #FFD700; /* Cor diferente para o texto dinâmico */
+}
+
+#logo-container {
+    position: absolute;
+    top: 10%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+}
+
+#logo-container img {
+    max-width: 100px; /* Define o tamanho máximo da logo */
+    height: auto;    /* Mantém a proporção da imagem */
+}

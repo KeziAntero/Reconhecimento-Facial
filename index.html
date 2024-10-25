@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Kézia Antero">
+    <title>Projeto | Reconhecimento Facial com FaceAPI</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+
+   
+    <div id="logo-container">
+        <img src="./assets/images/logo.png" alt="Logo">
+    </div>
+
+    <video id="cam" width="640" height="480" autoplay></video>
+
+    <div id="info">
+        <p>Identificação: <span id="identification"></span></p>
+        <p>Idade estimada: <span id="age"></span></p>
+        <p>Gênero: <span id="gender"></span></p>
+        <p>Estado emocional: <span id="state"></span></p>
+    </div>
+
+    <script src="./assets/lib/face-api/face-api.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
