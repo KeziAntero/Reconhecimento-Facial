@@ -11,8 +11,6 @@ const startVideo = () => {
     })
     .catch((error) => console.error("Erro ao acessar a câmera:", error));
 };
-
-
 const loadLabels = () => {
   const labels = ["Kézia Antero"];
   return Promise.all(
@@ -26,12 +24,19 @@ const loadLabels = () => {
           .detectSingleFace(img)
           .withFaceLandmarks()
           .withFaceDescriptor();
-        descriptions.push(detections.descriptor);
+
+        // Verifique se a detecção é válida
+        if (detections && detections.descriptor) {
+          descriptions.push(detections.descriptor);
+        } else {
+          console.warn(`Rosto não detectado na imagem ${label}/${i}.jpg`);
+        }
       }
       return new faceapi.LabeledFaceDescriptors(label, descriptions);
     })
   );
 };
+
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri("/assets/lib/face-api/models"),
@@ -40,7 +45,11 @@ Promise.all([
   faceapi.nets.faceExpressionNet.loadFromUri("/assets/lib/face-api/models"),
   faceapi.nets.ageGenderNet.loadFromUri("/assets/lib/face-api/models"),
   faceapi.nets.ssdMobilenetv1.loadFromUri("/assets/lib/face-api/models"),
-]).then(startVideo);
+]).then(() => {
+  console.log("Modelos carregados com sucesso");
+  startVideo();
+});
+
 
 const translateExpression = (expression) => {
   const expressionMap = {
