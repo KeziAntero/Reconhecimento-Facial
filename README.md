@@ -2,7 +2,7 @@
 
 Este projeto é uma aplicação de reconhecimento facial em tempo real usando a API de WebRTC e a biblioteca `face-api.js`. A aplicação detecta rostos a partir da webcam do usuário, identificando idade, gênero e expressões faciais, além de reconhecer rostos previamente treinados.
 
-![Demonstração do Projeto]([https://link-para-seu-gif.gif](https://ibb.co/vB41vJY))
+![Demonstração do Projeto](assets/lib/face-api/labels/Kézia Antero/video-li.gif)
 
 ## Funcionalidades
 
