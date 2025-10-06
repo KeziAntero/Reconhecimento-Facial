@@ -25,7 +25,7 @@ const loadLabels = () => {
           .withFaceLandmarks()
           .withFaceDescriptor();
 
-        // Verifique se a detecção é válida
+        // Verifica se a detecção é válida
         if (detections && detections.descriptor) {
           descriptions.push(detections.descriptor);
         } else {
